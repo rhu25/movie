@@ -1,0 +1,1 @@
+export const MOEVIE_CATCHE_KEY = `movie.catche.key`
