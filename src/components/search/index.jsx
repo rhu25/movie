@@ -5,9 +5,6 @@ import { setMovie } from '../../actions/index'
 import { fetchData, cacheStoreItem, cacheGetItem, sortByProps} from '../../utils/helper'
 let Search = (props) => {
     const [value, setValue] = useState(``);
-    useEffect(() => {
-        setValue(props.search)
-    }, [props.search]);
     let handleChange = async (event) => {
         let movies;
         let search = event.target.value
@@ -21,7 +18,7 @@ let Search = (props) => {
             });
         }
         movies = await fetchData(search);
-        console.log(search,movies)
+        
         if(!movies.Error){
             
             props.setMovie({
